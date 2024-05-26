@@ -1,0 +1,63 @@
+{% extends "./base.html" %} {% block content %} {% load static %}
+<div class="chat-container">
+  <div class="messages" id="message-container">
+    {% if user.is_authenticated %} {% for message in all_messages %}
+    <div
+      class="message {% if message.user == request.user %}sent{% else %}received{% endif %}"
+    >
+      <div class="message-image">
+        <img src="{% static 'images/user.png' %}" alt="user-image" />
+      </div>
+      <div class="message-text">
+        {% if message.user == request.user %}
+        <strong>You :</strong>
+        {% else %}
+        <strong>{{ message.user.username }}:</strong>
+        {% endif %} {{ message.user_message }}
+      </div>
+    </div>
+    <div class="message">
+      <div class="message-image">
+        <img src="{% static 'images/robo.jpg' %}" alt="bot-image" />
+      </div>
+      <div class="message-text">
+        <strong>Gemini :</strong>
+        <pre><code>{{ message.gemini_response }}</code></pre>
+      </div>
+    </div>
+    {% endfor %} {% else %} {% if user_message %}
+    <div class="message">
+      <div class="message-image">
+        <img src="{% static 'images/user.png' %}" alt="user-image" />
+      </div>
+      <div class="message-text">
+        <strong>You : </strong>
+        {{ user_message }}
+      </div>
+    </div>
+
+    <div class="message">
+      <div class="message-image">
+        <img src="{% static 'images/robo.jpg' %}" alt="bot-image" />
+      </div>
+      <div class="message-text">
+        <strong>Gemini : </strong>
+        <pre><code>{{ gemini_response }}</code></pre>
+      </div>
+    </div>
+    {% endif %} {% endif %}
+  </div>
+
+  {% comment %} chat_box {% endcomment %}
+  <form class="chat-box" method="post">
+    {% csrf_token %}
+    <input
+      type="text"
+      placeholder="Enter your message"
+      class="chat-input"
+      name="user_message"
+    />
+    <button class="chat-send" type="submit">Send</button>
+  </form>
+</div>
+{% endblock content %}
