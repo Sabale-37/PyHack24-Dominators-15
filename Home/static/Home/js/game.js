@@ -168,7 +168,7 @@
     },
     {
       name: "python",
-      img: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/74196/python-logo.png",
+      img: "/static/Home/images/clay-human-brain.webp",
       id: 8,
     },
     {
