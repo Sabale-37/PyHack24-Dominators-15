@@ -12,7 +12,7 @@ def predict_lifestyle(
 ):
     try:
         # Load the dataset
-        dataset = pd.read_csv(r'C:\Users\Dell\Desktop\Django\PyHack-24-Dominators-15\mentalHealth\student_dataset.csv')
+        dataset = pd.read_csv(r'C:\Users\Admin\Desktop\PyHack24-Dominators-15\mentalHealth\student_dataset.csv')
 
         # Define feature names based on the user-provided input
         feature_names = [

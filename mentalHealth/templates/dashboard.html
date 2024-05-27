@@ -5,7 +5,15 @@
   {% if 'chart_data' %}
   <canvas id="lifestyleChart" width="400" height="200"></canvas>
   <div class="box">
-    <div class="box-color" style="yellow"></div>
+    <div class="box-color" style="
+    {% if result ==  'Perfect lifestyle' %}
+        background: green;
+    {% elif result == 'Lifestyle change needed' %}
+        background: yellow;
+    {% else %}
+        background: red;
+    {% endif %}
+"></div>
     <h3 class="result">{{result}}</h3>
   </div>
 

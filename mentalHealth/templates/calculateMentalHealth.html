@@ -1,0 +1,384 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>Check your Mental Health</h1>
+<form action="/mentalhealth/" method='POST'>
+    {% csrf_token %}
+    <div class="grid-new">
+        <!-- Anxiety Level Questions -->
+        <div class="grid-item">
+            <label for="question1" class='label'> how often do you feel excessively worried about different things?</label>
+            <select name="question1" id="question1" class='input'>
+                <option value="4">Rarely</option>
+                <option value="9">Occasionally</option>
+                <option value="17">Sometimes</option>
+                <option value="23">Often</option>
+                <option value="30">Always</option>
+            </select>
+        </div>
+        <div class="grid-item">
+            <label for="question2" class='label'>How frequently do you experience symptoms such as restlessness, fatigue, or difficulty concentrating due to anxiety?</label>
+            <select name="question2" id="question2" class='input'>
+                <option value="4">Rarely</option>
+                <option value="9">Occasionally</option>
+                <option value="17">Sometimes</option>
+                <option value="23">Often</option>
+                <option value="30">Always</option>
+            </select>
+        </div>
+        <div class="grid-item">
+            <label for="question3" class='label'>How often do you feel nervous, anxious, or on edge?</label>
+            <select name="question3" id="question3" class='input'>
+                <option value="4">Rarely</option>
+                <option value="9">Occasionally</option>
+                <option value="17">Sometimes</option>
+                <option value="23">Often</option>
+                <option value="30">Always</option>
+            </select>
+        </div>
+
+        <!-- Mental Health History Questions -->
+        <div class="grid-item">
+            <label for="question4" class='label'>Have you ever been diagnosed with a mental health disorder?</label>
+            <select name="question4" id="question4" class='input'>
+                <option value="0">No</option>
+                <option value="1">Yes</option>
+            </select>
+        </div>
+        <div class="grid-item">
+            <label for="question5" class='label'>Have you ever received treatment for a mental health issue?</label>
+            <select name="question5" id="question5" class='input'>
+                <option value="0">No</option>
+                <option value="1">Yes</option>
+            </select>
+        </div>
+        <div class="grid-item">
+            <label for="question6" class='label'>Have you ever been hospitalized due to a mental health condition?</label>
+            <select name="question6" id="question6" class='input'>
+                <option value="0">No</option>
+                <option value="1">Yes</option>
+            </select>
+        </div>
+
+        <!-- Depression Questions -->
+        <div class="grid-item">
+            <label for="question7" class='label'>On a scale of 1-30, how often do you feel down, depressed, or hopeless?</label>
+            <select name="question7" id="question7" class='input'>
+                <option value="4">Rarely</option>
+                <option value="9">Occasionally</option>
+                <option value="17">Sometimes</option>
+                <option value="23">Often</option>
+                <option value="30">Always</option>
+            </select>
+        </div>
+        <div class="grid-item">
+            <label for="question8" class='label'>How often do you feel little interest or pleasure in doing things?</label>
+            <select name="question8" id="question8" class='input'>
+                <option value="4">Rarely</option>
+                <option value="9">Occasionally</option>
+                <option value="17">Sometimes</option>
+                <option value="23">Often</option>
+                <option value="30">Always</option>
+            </select>
+        </div>
+        <div class="grid-item">
+            <label for="question9" class='label'>How often do you have trouble falling asleep, staying asleep, or sleeping too much?</label>
+            <select name="question9" id="question9" class='input'>
+                <option value="4">Rarely</option>
+                <option value="9">Occasionally</option>
+                <option value="17">Sometimes</option>
+                <option value="23">Often</option>
+                <option value="30">Always</option>
+            </select>
+        </div>
+
+        <!-- Headache Questions -->
+        <div class="grid-item">
+            <label for="question10" class='label'>In the past month, on a scale of 1-30, how severe have your headaches been?</label>
+            <select name="question10" id="question10" class='input'>
+                <option value="4">Mild</option>
+                <option value="9">Moderate</option>
+                <option value="17">Severe</option>
+                <option value="23">Very severe</option>
+                <option value="30">Extremely severe</option>
+            </select>
+        </div>
+        <div class="grid-item">
+            <label for="question11" class='label'>How often do you experience headaches?</label>
+            <select name="question11" id="question11" class='input'>
+                <option value="4">Rarely</option>
+                <option value="9">Occasionally</option>
+                <option value="17">Sometimes</option>
+                <option value="23">Often</option>
+                <option value="30">Always</option>
+            </select>
+        </div>
+        <div class="grid-item">
+            <label for="question12" class='label'>How long do your headaches usually last?</label>
+            <select name="question12" id="question12" class='input'>
+                <option value="4">Short duration</option>
+                <option value="9">Moderate duration</option>
+                <option value="17">Long duration</option>
+                <option value="23">Very long duration</option>
+                <option value="30">Extremely long duration</option>
+            </select>
+        </div>
+
+        <!-- Sleep Quality Questions -->
+        <div class="grid-item">
+            <label for="question13" class='label'>On a scale of 1-30, how would you rate your overall sleep quality?</label>
+            <select name="question13" id="question13" class='input'>
+                <option value="4">Very good</option>
+                <option value="9">Good</option>
+                <option value="17">Fair</option>
+                <option value="23">Poor</option>
+                <option value="30">Very poor</option>
+            </select>
+        </div>
+        <div class="grid-item">
+            <label for="question14" class='label'>How often do you have trouble falling asleep or staying asleep?</label>
+            <select name="question14" id="question14" class='input'>
+                <option value="4">Rarely</option>
+                <option value="9">Occasionally</option>
+                <option value="17">Sometimes</option>
+                <option value="23">Often</option>
+                <option value="30">Always</option>
+            </select>
+        </div>
+        <div class="grid-item">
+            <label for="question15" class='label'>How refreshed do you feel when you wake up in the morning?</label>
+            <select name="question15" id="question15" class='input'>
+                <option value="4">Very refreshed</option>
+                <option value="9">Somewhat refreshed</option>
+                <option value="17">Neither refreshed nor tired</option>
+                <option value="23">Somewhat tired</option>
+                <option value="30">Very tired</option>
+            </select>
+        </div>
+
+        <!-- Safety Questions -->
+        <div class="grid-item">
+            <label for="question16" class='label'>On a scale of 1-30, how safe do you feel in your home?</label>
+            <select name="question16" id="question16" class='input'>
+                <option value="4">Very safe</option>
+                <option value="9">Safe</option>
+                <option value="17">Somewhat safe</option>
+                <option value="23">Unsafe</option>
+                <option value="30">Very unsafe</option>
+            </select>
+        </div>
+        <div class="grid-item">
+            <label for="question17" class='label'>How safe do you feel in your neighborhood?</label>
+            <select name="question17" id="question17" class='input'>
+                <option value="4">Very safe</option>
+                <option value="9">Safe</option>
+                <option value="17">Somewhat safe</option>
+                <option value="23">Unsafe</option>
+                <option value="30">Very unsafe</option>
+            </select>
+        </div>
+        <div class="grid-item">
+            <label for="question18" class='label'>How safe do you feel at your place of work or school?</label>
+            <select name="question18" id="question18" class='input'>
+                <option value="4">Very safe</option>
+                <option value="9">Safe</option>
+                <option value="17">Somewhat safe</option>
+                <option value="23">Unsafe</option>
+                <option value="30">Very unsafe</option>
+            </select>
+        </div>
+
+        <!-- Academic Performance Questions -->
+        <div class="grid-item">
+            <label for="question19" class='label'>On a scale of 1-30, how would you rate your academic performance this semester/year?</label>
+            <select name="question19" id="question19" class='input'>
+                <option value="4">Below average</option>
+                <option value="9">Average</option>
+                <option value="17">Good</option>
+                <option value="23">Very good</option>
+                <option value="30">Excellent</option>
+            </select>
+        </div>
+        <div class="grid-item">
+            <label for="question20" class='label'>How well do you feel you understand the material in your classes?</label>
+            <select name="question20" id="question20" class='input'>
+                <option value="4">Not well</option>
+                <option value="9">Somewhat well</option>
+                <option value="17">Well</option>
+                <option value="23">Very well</option>
+                <option value="30">Extremely well</option>
+            </select>
+        </div>
+        <div class="grid-item">
+            <label for="question21" class='label'>How confident are you in your ability to succeed academically?</label>
+            <select name="question21" id="question21" class='input'>
+                <option value="4">Not confident</option>
+                <option value="9">Somewhat confident</option>
+                <option value="17">Confident</option>
+                <option value="23">Very confident</option>
+                <option value="30">Extremely confident</option>
+            </select>
+        </div>
+
+        <!-- Future Career Concerns Questions -->
+        <div class="grid-item">
+            <label for="question22" class='label'>On a scale of 1-30, how concerned are you about your future career prospects?</label>
+            <select name="question22" id="question22" class='input'>
+                <option value="4">Not concerned</option>
+                <option value="9">Slightly concerned</option>
+                <option value="17">Somewhat concerned</option>
+                <option value="23">Very concerned</option>
+                <option value="30">Extremely concerned</option>
+            </select>
+        </div>
+        <div class="grid-item">
+            <label for="question23" class='label'>How confident are you in your ability to achieve your career goals?</label>
+            <select name="question23" id="question23" class='input'>
+                <option value="4">Not confident</option>
+                <option value="9">Somewhat confident</option>
+                <option value="17">Confident</option>
+                <option value="23">Very confident</option>
+                <option value="30">Extremely confident</option>
+            </select>
+        </div>
+        <div class="grid-item">
+            <label for="question24" class='label'>How often do you worry about finding a job in your field after graduation?</label>
+            <select name="question24" id="question24" class='input'>
+                <option value="4">Rarely</option>
+                <option value="9">Occasionally</option>
+                <option value="17">Sometimes</option>
+                <option value="23">Often</option>
+                <option value="30">Always</option>
+            </select>
+        </div>
+        
+        <div class="grid-item">
+            <label for="question25" class='label'>On a scale of 1-30, how safe do you feel in your home?</label>
+            <select name="question25" id="question25" class='input'>
+                <option value="1">Very safe</option>
+                <option value="7">Safe</option>
+                <option value="13">Somewhat safe</option>
+                <option value="19">Unsafe</option>
+                <option value="25">Very unsafe</option>
+            </select>
+        </div>
+        <div class="grid-item">
+            <label for="question26" class='label'>How safe do you feel in your neighborhood?</label>
+            <select name="question26" id="question26" class='input'>
+                <option value="1">Very safe</option>
+                <option value="7">Safe</option>
+                <option value="13">Somewhat safe</option>
+                <option value="19">Unsafe</option>
+                <option value="25">Very unsafe</option>
+            </select>
+        </div>
+        <div class="grid-item">
+            <label for="question27" class='label'>How safe do you feel at your place of work or school?</label>
+            <select name="question27" id="question27" class='input'>
+                <option value="1">Very safe</option>
+                <option value="7">Safe</option>
+                <option value="13">Somewhat safe</option>
+                <option value="19">Unsafe</option>
+                <option value="25">Very unsafe</option>
+            </select>
+        </div>
+        <div class="grid-item">
+            <label for="question28" class='label'>On a scale of 1-30, how would you rate your academic performance this semester/year?</label>
+            <select name="question28" id="question28" class='input'>
+                <option value="1">Below average</option>
+                <option value="7">Average</option>
+                <option value="13">Good</option>
+                <option value="19">Very good</option>
+                <option value="25">Excellent</option>
+            </select>
+        </div>
+        <div class="grid-item">
+            <label for="question29" class='label'>How well do you feel you understand the material in your classes?</label>
+            <select name="question29" id="question29" class='input'>
+                <option value="1">Not well</option>
+                <option value="7">Somewhat well</option>
+                <option value="13">Well</option>
+                <option value="19">Very well</option>
+                <option value="25">Extremely well</option>
+            </select>
+        </div>
+        <div class="grid-item">
+            <label for="question30" class='label'>How confident are you in your ability to succeed academically?</label>
+            <select name="question30" id="question30" class='input'>
+                <option value="1">Not confident</option>
+                <option value="7">Somewhat confident</option>
+                <option value="13">Confident</option>
+                <option value="19">Very confident</option>
+                <option value="25">Extremely confident</option>
+            </select>
+        </div>
+        <div class="grid-item">
+            <label for="question31" class='label'>On a scale of 1-30, how concerned are you about your future career prospects?</label>
+            <select name="question31" id="question31" class='input'>
+                <option value="1">Not concerned</option>
+                <option value="7">Slightly concerned</option>
+                <option value="13">Somewhat concerned</option>
+                <option value="19">Very concerned</option>
+                <option value="25">Extremely concerned</option>
+            </select>
+        </div>
+        <div class="grid-item">
+            <label for="question32" class='label'>How confident are you in your ability to achieve your career goals?</label>
+            <select name="question32" id="question32" class='input'>
+                <option value="1">Not confident</option>
+                <option value="7">Somewhat confident</option>
+                <option value="13">Confident</option>
+                <option value="19">Very confident</option>
+                <option value="25">Extremely confident</option>
+            </select>
+        </div>
+        <div class="grid-item">
+            <label for="question33" class='label'>How often do you worry about finding a job in your field after graduation?</label>
+            <select name="question33" id="question33" class='input'>
+                <option value="1">Rarely</option>
+                <option value="7">Occasionally</option>
+                <option value="13">Sometimes</option>
+                <option value="19">Often</option>
+                <option value="25">Always</option>
+            </select>
+        </div>
+
+        <!-- Placeholder questions 34 to 36 -->
+        <div class="grid-item">
+            <label for="question34" class='label'>Placeholder question 34 text here?</label>
+            <select name="question34" id="question34" class='input'>
+                <option value="1">Option 1</option>
+                <option value="2">Option 2</option>
+                <option value="3">Option 3</option>
+                <option value="4">Option 4</option>
+                <option value="5">Option 5</option>
+            </select>
+        </div>
+        <div class="grid-item">
+            <label for="question35" class='label'>Placeholder question 35 text here?</label>
+            <select name="question35" id="question35" class='input'>
+                <option value="1">Option 1</option>
+                <option value="2">Option 2</option>
+                <option value="3">Option 3</option>
+                <option value="4">Option 4</option>
+                <option value="5">Option 5</option>
+            </select>
+        </div>
+        <div class="grid-item">
+            <label for="question36" class='label'>Placeholder question 36 text here?</label>
+            <select name="question36" id="question36" class='input'>
+                <option value="1">Option 1</option>
+                <option value="2">Option 2</option>
+                <option value="3">Option 3</option>
+                <option value="4">Option 4</option>
+                <option value="5">Option 5</option>
+            </select>
+        </div>
+
+    </div>
+   
+    <button type="submit" class='submit'>Submit</button>
+</form>
+
+{% endblock %}

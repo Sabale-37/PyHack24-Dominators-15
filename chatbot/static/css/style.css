@@ -242,7 +242,7 @@ pre code {
 
 .nav {
   width: 90%;
-  height: 40%;
+  height: 57%;
   display: flex;
   flex-direction: column;
   background-color: var(--color-grey-light-1);
