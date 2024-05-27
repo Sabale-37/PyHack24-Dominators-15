@@ -1,0 +1,148 @@
+{% extends "./base.html" %} {% block content %}
+<main class="main">
+  <h1>Check your mental Health</h1>
+  <form action="/mentalhealth/dashboard" method='POST'>
+    {% csrf_token %}
+    <div class="grid">
+      <div class="grid-item">
+        <label for="anxiety_level" class="label">anxiety_level</label
+        ><input
+          type="number"
+          id="anxiety_level"
+          autocomplete="username"
+          class="input"
+          value="0"
+          name="anxiety_level"
+        />
+      </div>
+      <div class="grid-item">
+        <label for="mental_health_history" class="label"
+          >mental_health_history</label
+        ><input
+          type="number"
+          id="mental_health_history"
+          autocomplete="username"
+          class="input"
+          value="0"
+          name="mental_health_history"
+        />
+      </div>
+      <div class="grid-item">
+        <label for="depression" class="label">depression</label
+        ><input
+          type="number"
+          id="depression"
+          autocomplete="username"
+          class="input"
+          value="0"
+          name="depression"
+        />
+      </div>
+      <div class="grid-item">
+        <label for="headache" class="label">headache</label
+        ><input
+          type="number"
+          id="headache"
+          autocomplete="username"
+          class="input"
+          value="0"
+          name="headache"
+        />
+      </div>
+      <div class="grid-item">
+        <label for="sleep_quality" class="label">sleep_quality</label
+        ><input
+          type="number"
+          id="sleep_quality"
+          autocomplete="username"
+          class="input"
+          value="0"
+          name="sleep_quality"
+        />
+      </div>
+      <div class="grid-item">
+        <label for="safety" class="label">safety</label
+        ><input
+          type="number"
+          id="safety"
+          autocomplete="username"
+          class="input"
+          value="0"
+          name="safety"
+        />
+      </div>
+      <div class="grid-item">
+        <label for="academic_performance" class="label"
+          >academic_performance</label
+        ><input
+          type="number"
+          id="academic_performance"
+          autocomplete="username"
+          class="input"
+          value="0"
+          name="academic_performance"
+        />
+      </div>
+      <div class="grid-item">
+        <label for="future_career_concerns" class="label"
+          >future_career_concerns</label
+        ><input
+          type="number"
+          id="future_career_concerns"
+          autocomplete="username"
+          class="input"
+          value="0"
+          name="future_career_concerns"
+        />
+      </div>
+      <div class="grid-item">
+        <label for="social_support" class="label">social_support</label
+        ><input
+          type="number"
+          id="social_support"
+          autocomplete="username"
+          class="input"
+          value="0"
+          name="social_support"
+        />
+      </div>
+      <div class="grid-item">
+        <label for="peer_pressure" class="label">peer_pressure</label
+        ><input
+          type="number"
+          id="peer_pressure"
+          autocomplete="username"
+          class="input"
+          value="0"
+          name="peer_pressure"
+        />
+      </div>
+      <div class="grid-item">
+        <label for="extracurricular_activities" class="label"
+          >extracurricular_activities</label
+        ><input
+          type="number"
+          id="extracurricular_activities"
+          autocomplete="username"
+          class="input"
+          value="0"
+          name="extracurricular_activities"
+        />
+      </div>
+      <div class="grid-item">
+        <label for="bullying" class="label">bullying</label
+        ><input
+          type="number"
+          id="bullying"
+          autocomplete="username"
+          class="input"
+          value="0"
+          name="bullying"
+        />
+      </div>
+    </div>
+
+    <button type="submit" class='submit'>check</button>
+  </form>
+</main>
+{% endblock content %}
