@@ -21,5 +21,6 @@ urlpatterns = [
     path('mentalhealth/',include('mentalHealth.urls')),
     path('AI/',include('chatbot.urls')),
     path("admin/", admin.site.urls),
-    path('user/', include('User.urls'))
+    path('user/', include('User.urls')),
+    path('chat/',include('chat.urls'))
 ]

@@ -11,11 +11,11 @@
     <link
       rel="stylesheet"
       type="text/css"
-      href="{%static 'Home/css/style.css'%}"
+      href="{%static 'style.css'%}"
     />
     <script
       type="text/javascript"
-      src="{%static 'Home/js/script.js'%}"
+      src="{%static 'script.js'%}"
     ></script>
     <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
     <script>
@@ -34,19 +34,16 @@
     <header id="header">
       <nav>
         <div class="logo">
-          <img src="{%static 'Home/images/collegelogo.jpg'%}" alt="logo" />
+          <img src="{%static 'collegelogo.jpg'%}" alt="logo" />
         </div>
         <ul>
           <li><a class="active" href="/">Home</a></li>
-          <li><a href="/#portfolio_section">Portfolio</a></li>
-          <li><a href="/#team_section">Team</a></li>
-          <li><a href="{% url "chat_home" %}">Services</a></li>
-          <li><a href="/chat/messages">Contact</a></li>
-         
+          <li><a href="{% url "stress" %}">Mental Health</a></li>
+          <li><a href="{% url "dashboard" %}">dashboard</a></li>
         </ul>
         <div class="srch">
           <input type="text" class="search" placeholder="Search here..." /><img
-            src="{%static 'Home/icon/search.png'%}"
+            src="{%static 'search.png'%}"
             alt="search"
             onclick="slide()"
           />
@@ -59,6 +56,7 @@
   {% else %}
    <a class="get-started" href="{% url "login" %}">Get Started</a>
         {% endif %}
-
+</nav>
+</header>
 
 {% block content %}{% endblock content %}

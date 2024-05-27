@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'chatbot',
     'User',
     'Home',
-    'mentalHealth'
+    'mentalHealth',
+    'chat'
 ]
 
 MIDDLEWARE = [
