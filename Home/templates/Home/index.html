@@ -1,0 +1,358 @@
+{% extends "Home/base.html" %}
+{% block title %}JCE-Mental health learning{% endblock title %}
+{% block content %}
+{% load static %}
+
+
+        <img
+          src="{%static 'Home/icon/menu.png'%}"
+          class="menu"
+          onclick="sideMenu(0)"
+          alt="menu"
+        />
+      </nav>
+      <div class="head-container">
+        <div class="quote">
+          <p>
+            “Your mental health is a priority. Your happiness is essential. Your self-care is a necessity.”
+          </p>
+          <h5>
+            “Our website is a beacon of hope, dedicated to understanding and promoting mental health. 
+            We believe in the power of healing and recovery.
+            We are committed to enlightening people about mental health and wellness through our comprehensive resources.
+            We are here to guide you through the fog of doubt and the waves of anxiety, and lead you towards peace and clarity. 
+            With us, you will find a path to regain control of your life. Join us in this journey of self-discovery and healing.”
+          </h5>
+        </div>
+        <div class="svg-image">
+          <img src="{%static 'Home/images/svg1.jpg'%}" alt="svg" />
+        </div>
+      </div>
+      <div class="side-menu" id="side-menu">
+        <div class="close" onclick="sideMenu(1)">
+          <img src="{%static 'Home/icon/close.png'%}" alt="" />
+        </div>
+        <div class="user">
+          <img src="images/creator/roshan.jpeg" alt="Username" />
+          <p>Narayan Sabale</p>
+        </div>
+        <ul>
+          <li><a href="#about_section">About</a></li>
+          <li><a href="#portfolio_section">Portfolio</a></li>
+          <li><a href="#team_section">Team</a></li>
+          <li><a href="#services_section">Services</a></li>
+          <li><a href="#contactus_section">Contact</a></li>
+          <li><a href="#feedBACK">Feedback</a></li>
+          
+        </ul>
+      </div>
+    </header>
+
+    <!-- Some Popular Subjects -->
+    <div class="title">
+      <span>Features</span>
+    </div>
+    <br /><br />
+    <div class="course">
+      <center>
+        <div class="cbox">
+          <div class="det">
+            <a href=""
+              ><img src="{%static 'Home/images/book.png'%}" />WellnessPredict</a
+            >
+          </div>
+          <div class="det">
+            <a href=""
+              ><img src="{%static 'Home/images/d1.png'%}" />StudentWellnessPredict</a
+            >
+          </div>
+          <div class="det">
+            <a href="{% url "chatbot" %}"
+              ><img src="{%static 'Home/images/paper.png'%}" />PsychePilot</a
+            >
+          </div>
+          <div class="det">
+            <a href=""
+              ><img src="{%static 'Home/images/d1.png'%}" />brainbooster_game</a
+            >
+          </div>
+        </div>
+      </center>
+      <div class="cbox">
+        <div class="det">
+          <a href="https://www.7cups.com/"
+            ><img src="{%static 'Home/images/computer.png'%}" />E-Therapy</a
+          >
+        </div>
+        <div class="det">
+          <a href="https://bymyside.support/"
+            ><img src="{%static 'Home/images/data.png'%}" /> Share_Connect_Heal</a
+          >
+        </div>
+        <div class="det">
+          <a href="{% url "imagebot" %}"
+            ><img src="{%static 'Home/images/algo.png'%}" />#</a
+          >
+        </div>
+        <div class="det det-last">
+          <a href="{% url "game" %}"
+            ><img src="{%static 'Home/images/projects.png'%}" />Brain-Booster</a
+          >
+        </div>
+      </div>
+    </div>
+
+    <!-- ABOUT -->
+    <div class="diffSection" id="about_section">
+      <center><p style="font-size: 50px; padding: 100px">About</p></center>
+      <div class="about-content">
+        <div class="side-image">
+          <img class="sideImage" src="{%static 'Home/images/e3.jpg'%}" />
+        </div>
+        <div class="side-text">
+          <h2>About us</h2>
+          <p>
+            “We are a dedicated team passionate about mental health and wellness. 
+             Our mission is to provide a safe, inclusive platform that empowers individuals on their journey towards mental well-being. 
+             We offer a range of features, from AI-powered mental health predictions to online therapy sessions, all designed to support and guide you.
+             Join us as we break the stigma around mental health, one conversation at a time.”
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- PORTFOLIO -->
+    <div class="diffSection" id="portfolio_section">
+      <center>
+        <p style="font-size: 50px; padding: 100px; padding-bottom: 40px">
+          Portfolio
+        </p>
+      </center>
+      <div class="content">
+        <p>
+          USER DATA
+        </p>
+      </div>
+    </div>
+    <div class="extra">
+      <p>“Empowering individuals on their journey towards mental well-being through AI-powered tools and resources.”</p>
+      <div class="smbox">
+        <span
+          ><center>
+            <div class="data">4</div>
+            <div class="det">Users</div>
+          </center></span
+        >
+        <span
+          ><center>
+            <div class="data">3</div>
+            <div class="det">Consulted</div>
+          </center></span
+        >
+        <span
+          ><center>
+            <div class="data">1</div>
+            <div class="det">Healed</div>
+          </center></span
+        >
+      </div>
+    </div>
+
+    <!-- TEAM -->
+    <div class="diffSection" id="team_section">
+      <center>
+        <p style="font-size: 50px; padding-top: 100px; padding-bottom: 60px">
+          We're the Creators
+        </p>
+      </center>
+      <div class="totalcard">
+        <div class="card">
+          <center><img src="{%static 'Home/images/chandan.jpg'%}" /></center>
+          <center>
+            <div class="card-title">Chandan Kangralkar</div>
+            <div id="detail">
+              <p>
+                “Mental health needs a great deal of attention. 
+                It's the final taboo and it needs to be faced and dealt with.”
+              </p>
+              <div class="duty"></div>
+              <a
+                href="https://in.linkedin.com/in/chandan-kangralkar-8499371b3?trk=public_profile_browsemap-profile"
+                target="_blank"
+                ><button class="btn-roshan">Follow +</button></a
+              >
+            </div>
+          </center>
+        </div>
+        <div class="card">
+          <center><img src="{%static 'Home/images/beyonder.jpg'%}" /></center>
+          <center>
+            <div class="card-title">Aditya Mehetri</div>
+            <div id="detail">
+              <p>
+                “The strongest people are not those who show 
+                strength in front of the world but those who fight 
+                and win battles that others do not know anything about.”
+              </p>
+              <div class="duty"></div>
+              <a
+                href="https://in.linkedin.com/in/aditya-mehetri-8422b6289?trk=public_profile_browsemap-profile"
+                target="_blank"
+                ><button class="btn-akhil">Follow +</button></a
+              >
+            </div>
+          </center>
+        </div>
+      </div>
+    </div>
+
+    <!-- SERVICES -->
+    <div class="service-swipe">
+      <div class="diffSection" id="services_section">
+        <center>
+          <p
+            style="
+              font-size: 50px;
+              padding: 100px;
+              padding-bottom: 40px;
+              color: #fff;
+            "
+          >
+            Services
+          </p>
+        </center>
+      </div>
+      <a href="https://www.youtube.com/watch?v=x0nZ1ZLephQ"
+        ><div class="s-card">
+          <img src="{%static 'Home/icon/computer-courses.png'%}" />
+          <p>Meditation videos</p>
+        </div></a
+      >
+      <a href="https://www.youtube.com/watch?v=VgdAcENXy84"
+        ><div class="s-card">
+          <img src="{%static 'Home/icon/brainbooster.png'%}" />
+          <p>Music Therapy</p>
+        </div></a
+      >
+      <a href="https://www.manavfoundation.org.in/counselling-for-adults.html"
+        ><div class="s-card">
+          <img src="{%static 'Home/icon/discussion.png'%}" />
+          <p>Help Centers</p>
+        </div></a
+      >
+      <a href="#contactus_section"
+        ><div class="s-card">
+          <img src="{%static 'Home/icon/help.png'%}" />
+          <p>24x7 Online Support</p>
+        </div></a
+      >
+    </div>
+
+    <!-- Reviews by Students -->
+    <div id="makeitfull">
+      <a href="#review_section"
+        ><img src="{%static 'Home/icon/makeitfull.png'%}"
+      /></a>
+    </div>
+    <div class="review">
+      <div class="diffSection" id="review_section">
+        <center>
+          <p
+            style="
+              font-size: 40px;
+              padding: 100px;
+              padding-bottom: 40px;
+              color: #2e3d49;
+            "
+          >
+
+    <!-- FEEDBACK -->
+    <div class="title2" id="feedBACK">
+      <span>Give Feedback</span>
+      <div class="shortdesc2">
+        <p>Please share your valuable feedback to us</p>
+      </div>
+    </div>
+
+    <div class="feedbox">
+      <div class="feed">
+        <form
+          action="mailto:roshank9419@gmail.com"
+          method="post"
+          enctype="text/plain"
+        >
+          <label>Your Name</label><br />
+          <input type="text" name="" class="fname" required="required" /><br />
+          <label>Email</label><br />
+          <input type="email" name="mail" required="required" /><br />
+          <label>Additional Details</label><br />
+          <textarea name="addtional"></textarea><br />
+          <button type="submit" id="csubmit">Send Message</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Sliding Information -->
+    <marquee
+      style="
+        background: linear-gradient(to right, #fa4b37, #df2771);
+        margin-top: 50px;
+      "
+      direction="left"
+      onmouseover="this.stop()"
+      onmouseout="this.start()"
+      scrollamount="20"
+      ><div class="marqu">
+        “Mental health is as important as physical health in maintaining our overall well-being.
+        It encompasses our emotional, psychological, and social well-being and affects how we think, feel, and act.
+        Good mental health allows us to cope with the stresses of life, work productively, and make meaningful contributions to our communities. 
+        It's crucial at every stage of life, from childhood and adolescence through adulthood. 
+        Mental illnesses are common, and they can affect anyone, regardless of age or background.
+        They can be influenced by a variety of factors, including genetics, environment, and lifestyle. 
+        With the right support and treatment, most people with mental health problems can recover completely or manage their symptoms effectively. 
+        Therefore, it's essential to prioritize mental health, promote awareness, and eliminate the stigma associated with mental health issues.
+        Remember, it's okay to seek help, and it's okay to talk about mental health. Your mental health matters! 😊”
+      </div></marquee
+    >
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-container">
+        <div class="left-col">
+          <img
+            src="{%static 'Home/icon/logo - Copy.png'%}"
+            style="width: 200px"
+          />
+          <div class="logo"></div>
+          <div class="social-media">
+            <a href="#"><img src="{%static 'Home/icon/fb.png'%}" /></a>
+            <a href="#"><img src="{%static 'Home/icon/insta.png'%}" /></a>
+            <a href="#"><img src="{%static 'Home/icon/tt.png'%}" /></a>
+            <a href="#"><img src="{%static 'Home/icon/ytube.png'%}" /></a>
+            <a href="#"><img src="{%static 'Home/icon/linkedin.png'%}" /></a>
+          </div>
+          <br /><br />
+          <p class="rights-text">
+            Copyright © 2021 Created By Chandan Kangralkar, Aditya Mehetri All
+            Rights Reserved.
+          </p>
+          <br />
+          <p>
+            <img src="{%static 'Home/icon/location.png'%}" /> jain college of
+            engineering<br />Belgaum
+          </p>
+          <br />
+          <p>
+            <img src="{%static 'Home/icon/phone.png'%}" />
+            +91-1234-567-890<br /><img
+              src="{%static 'Home/icon/mail.png'%}"
+            />&nbsp; Beyonder@gmail.com
+          </p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
+
+
+{% endblock content %}

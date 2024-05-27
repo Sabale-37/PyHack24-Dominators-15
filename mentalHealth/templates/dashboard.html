@@ -1,0 +1,38 @@
+{% extends "./base.html" %} {% block content %}
+<main class="main">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <h2>Lifestyle Data Chart</h2>
+  {% if 'chart_data' %}
+  <canvas id="lifestyleChart" width="400" height="200"></canvas>
+  <div class="box">
+    <div class="box-color" style="yellow"></div>
+    <h3 class="result">{{result}}</h3>
+  </div>
+
+  <script>
+    const chartData = {{ chart_data|safe }};
+    const ctx = document.getElementById('lifestyleChart').getContext('2d');
+    const chart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: chartData.labels,
+            datasets: [{
+                label: 'Value',
+                data: chartData.values,
+                backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                borderColor: 'rgba(75, 192, 192, 1)',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+  </script>
+  {% endif %}
+</main>
+{% endblock content %}

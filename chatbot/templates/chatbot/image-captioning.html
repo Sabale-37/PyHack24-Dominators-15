@@ -1,0 +1,39 @@
+{% extends "./base.html" %} {% block content %} {% load static %}
+<div class="chat-container" style="justify-content: normal">
+  <h1 style="font-size: 3.5rem; text-transform: uppercase; margin-top: 3rem">
+    📸 Image Captioning
+  </h1>
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+
+    <h3>Upload an image...</h3>
+
+    <div class="browse-container">
+      <div>
+        <span style="color: black">Drag and drop file here</span> <br />Limit
+        200MB per file JPG, JPEG, PNG
+      </div>
+      <div>
+        <label for="image" class="upload-btn">Upload Image</label><br />
+        <input type="file" id="image" name="image" style="display: none" />
+      </div>
+    </div>
+    <br /><br />
+    <button type="submit" class="generate-btn">Generate Caption</button>
+  </form>
+  {% if caption %}
+
+  <div class="caption-message">
+    <div class="message-image">
+      <img src="{% static 'images/robo.jpg' %}" alt="bot-image" />
+    </div>
+    <div class="message-text" style="max-width: 85%">
+      <strong>Gemini : </strong>
+      <pre><code>{{ caption }}</code></pre>
+    </div>
+  </div>
+
+  {% endif %}
+</div>
+
+{% endblock content %}

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {% load static %}
+    <link
+      rel="shortcut icon"
+      type="png"
+      href="{%static 'User/icon/favicon.png'%}"
+    />
+    <title>Login SignUp</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{%static 'User/css/loginStyle.css'%}"
+    />
+    <script src="{%static 'User/js/script.js'%}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!-- It will redirect to the User Page after submitting the form -->
+    <script>
+      function signup() {
+        location.href = "/user/signup/";
+      }
+    </script>
+  </head>
+  <body>
+    <div class="form-box">
+      <div class="button-box">
+        <div id="btn"></div>
+        <button
+          type="button"
+          class="toggle-btn"
+          id="log"
+          onclick="login()"
+          style="color: #fff"
+        >
+          Log In
+        </button>
+        <button type="button" class="toggle-btn" id="reg" onclick="signup()">
+          signup
+        </button>
+      </div>
+      <div class="social-icons">
+        <img src="{%static 'User/icon/fb2.png'%}" />
+        <img src="{%static 'User/icon/insta2.png'%}" />
+        <img src="{%static 'User/icon/tt2.png'%}" />
+      </div>
+
+      <!-- Login Form -->
+      <form
+        id="login"
+        class="input-group"
+        action="{%url 'login'%}"
+        method="POST"
+      >
+        {% csrf_token %}
+        <div class="inp">
+          <img src="{%static 'User/icon/user.png'%}" /><input
+            type="text"
+            name="username"
+            id="email"
+            class="input-field"
+            placeholder="Username "
+            style="width: 88%; border: none"
+            required="required"
+          />
+        </div>
+
+        <div class="inp">
+          <img src="{%static 'User/icon/password.png'%}" /><input
+            type="password"
+            id="password"
+            name="password"
+            class="input-field"
+            placeholder="Password"
+            style="width: 88%; border: none"
+            required="required"
+          />
+        </div>
+        <input type="checkbox" class="check-box" />Remember Password
+        <button type="submit" class="submit-btn">Log In</button>
+      </form>
+
+      <div class="other" id="other">
+        <div class="instead">
+          <h3>or</h3>
+        </div>
+        <button class="connect" onclick="google()">
+          <img src="{%static 'User/icon/google.png'%}" /><span
+            >Sign in with Google</span
+          >
+        </button>
+      </div>
+
+      <!-- Registration Form -->
+      <form id="register" class="input-group">
+        <input
+          type="text"
+          class="input-field"
+          placeholder="Full Name"
+          required="required"
+        />
+        <input
+          type="email"
+          class="input-field"
+          placeholder="Email Address"
+          required="required"
+        />
+        <input
+          type="password"
+          class="input-field"
+          placeholder="Create Password"
+          name="psame"
+          required="required"
+        />
+        <input
+          type="password"
+          class="input-field"
+          placeholder="Confirm Password"
+          name="psame"
+          required="required"
+        />
+        <input
+          type="checkbox"
+          class="check-box"
+          id="chkAgree"
+          onclick="goFurther()"
+        />I agree to the Terms & Conditions
+        <button type="submit" id="btnSubmit" class="submit-btn reg-btn">
+          Register
+        </button>
+      </form>
+    </div>
+    <script type="text/javascript" src="script.js"></script>
+  </body>
+</html>
