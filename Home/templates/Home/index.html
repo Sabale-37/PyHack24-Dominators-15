@@ -1,5 +1,5 @@
 {% extends "Home/base.html" %}
-{% block title %}JCE- learning{% endblock title %}
+{% block title %}JCE-Mental health learning{% endblock title %}
 {% block content %}
 {% load static %}
 
@@ -57,38 +57,40 @@
       <center>
         <div class="cbox">
           <div class="det">
-            <a href="{% url "chatbot" %}"
+            <a href=""
               ><img src="{%static 'Home/images/book.png'%}" />WellnessPredict</a
             >
           </div>
           <div class="det">
-            <a href="{% url "imagebot" %}"
+            <a href=""
               ><img src="{%static 'Home/images/d1.png'%}" />StudentWellnessPredict</a
             >
           </div>
           <div class="det">
-            <a href=""
+            <a href="{% url "chatbot" %}"
               ><img src="{%static 'Home/images/paper.png'%}" />PsychePilot</a
             >
           </div>
           <div class="det">
             <a href=""
-              ><img src="{%static 'Home/images/d1.png'%}" />E-Therapy</a
+              ><img src="{%static 'Home/images/d1.png'%}" />brainbooster_gam</a
             >
           </div>
         </div>
       </center>
       <div class="cbox">
         <div class="det">
-          <a href=""
-            ><img src="{%static 'Home/images/computer.png'%}" />brainbooster_game</a
+          <a href="https://www.7cups.com/"
+            ><img src="{%static 'Home/images/computer.png'%}" />E-Therapy</a
           >
         </div>
         <div class="det">
-          <a href="#"><img src="{%static 'Home/images/data.png'%}" /> Share_Connect_Heal</a>
+          <a href="https://bymyside.support/"
+            ><img src="{%static 'Home/images/data.png'%}" /> Share_Connect_Heal</a
+          >
         </div>
         <div class="det">
-          <a href="#"
+          <a href="{% url "imagebot" %}"
             ><img src="{%static 'Home/images/algo.png'%}" />#</a
           >
         </div>
@@ -108,9 +110,12 @@
           <img class="sideImage" src="{%static 'Home/images/e3.jpg'%}" />
         </div>
         <div class="side-text">
-          <h2>What you think about us ?</h2>
+          <h2>About us</h2>
           <p>
-            motivation quotes if needed orelse general info
+            “We are a dedicated team passionate about mental health and wellness. 
+             Our mission is to provide a safe, inclusive platform that empowers individuals on their journey towards mental well-being. 
+             We offer a range of features, from AI-powered mental health predictions to online therapy sessions, all designed to support and guide you.
+             Join us as we break the stigma around mental health, one conversation at a time.”
           </p>
         </div>
       </div>
@@ -125,12 +130,12 @@
       </center>
       <div class="content">
         <p>
-          “Fill with quotes to motivate”
+          USER DATA
         </p>
       </div>
     </div>
     <div class="extra">
-      <p>We're increasing this data every year</p>
+      <p>“Empowering individuals on their journey towards mental well-being through AI-powered tools and resources.”</p>
       <div class="smbox">
         <span
           ><center>
@@ -260,53 +265,6 @@
               color: #2e3d49;
             "
           >
-            What the Students Say About Us?
-          </p>
-        </center>
-      </div>
-      <div class="rev-container">
-        <div class="rev-card">
-          <div class="identity">
-            <img src="{%static 'Home/images/narayan.jpg'%}" />
-            <p>Narayan Sabale</p>
-            <h6>Student</h6>
-            <div class="rating">
-              <img src="{%static 'Home/icon/star.png'%}" /><img
-                src="{%static 'Home/icon/star.png'%}"
-              /><img src="{%static 'Home/icon/star.png'%}" /><img
-                src="{%static 'Home/icon/star.png'%}"
-              /><img src="{%static 'Home/icon/star.png'%}" />
-            </div>
-          </div>
-          <div class="rev-cont">
-            <p id="title">Review:</p>
-            <p id="content">
-              to write some review or else will delete 
-            </p>
-          </div>
-        </div>
-        <div class="rev-card">
-          <div class="identity">
-            <img src="{%static 'Home/images/chandan.jpg'%}" />
-            <p>Chandan Kangralkar</p>
-            <h6>Student</h6>
-            <div class="rating">
-              <img src="{%static 'Home/icon/star.png'%}" /><img
-                src="{%static 'Home/icon/star.png'%}"
-              /><img src="{%static 'Home/icon/star.png'%}" /><img
-                src="{%static 'Home/icon/star.png'%}"
-              /><img src="{%static 'Home/icon/star.png'%}" />
-            </div>
-          </div>
-          <div class="rev-cont">
-            <p id="title">Review:</p>
-            <p id="content">
-             to write some review or else will delete 
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
 
     <!-- CONTACT US -->
     <div class="diffSection" id="contactus_section">
