@@ -173,22 +173,22 @@
     },
     {
       name: "flower",
-      img: "./images/random-1574391.webp",
+      img: "static/Home/images/random-1574391.webp",
       id: 9,
     },
     {
       name: "swan",
-      img: "./images/swan-2107052_640.webp",
+      img: "static/Home/images/swan-2107052_640.webp",
       id: 10,
     },
     {
       name: "tree",
-      img: "./images/grassy-landscape-with-tree-raincloud_1048-2904.webp",
+      img: "static/Home/images/grassy-landscape-with-tree-raincloud_1048-2904.webp",
       id: 11,
     },
     {
       name: "butterfly",
-      img: "./images/closeup-shot-beautiful-butterfly-with-interesting-textures-orange-petaled-flower_181624-7640.webp",
+      img: "static/Home/images/closeup-shot-beautiful-butterfly-with-interesting-textures-orange-petaled-flower_181624-7640.webp",
       id: 12,
     },
   ];
