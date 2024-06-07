@@ -1,0 +1,76 @@
+{% extends "./main.html" %} {% block content %}
+
+<style>
+  .canvas-container {
+    width: 500px;
+    height: 500px;
+    margin: 0 8rem;
+    
+    display: inline-block;
+  }
+</style>
+
+<body>
+  <h1>{{ company.founder }}</h1>
+  <div style='padding: 2rem'>
+    <table class="table table-bordered">
+      
+      <tbody>
+        <tr>
+          <th scope="row">Experience</th>
+          <td>{{ company.company_name }}</td>
+         
+        </tr>
+        <tr>
+          <th scope="row">Dr. Name</th>
+          <td>{{ company.founder }}</td>
+         
+        </tr>
+        <tr>
+          <th scope="row">Qualifications</th>
+          <td>{{ company.problem_statement }}</td>
+          
+        </tr>
+        <tr>
+          <th scope="row">Experties</th>
+          <td colspan="2"> {{ company.solution }}</td>
+          
+        </tr>
+        <tr>
+          <th scope="row">Place</th>
+          <td colspan="2">{{ company.market_opportunity }}</td>
+          
+        </tr>
+        <tr>
+          <th scope="row">Mobile Number</th>
+          <td colspan="2">{{company.description}}</td>
+          
+        </tr>
+        {% comment %} <tr>
+          <th scope="row">Market Opportunity</th>
+          <td colspan="2">{{ company.revenue }}</td>
+          
+        </tr> {% endcomment %}
+        <tr>
+          <th scope="row">Email</th>
+          <td colspan="2">{{ company.investment_round }}</td>
+          
+        </tr>
+      </tbody>
+    </table>
+  
+  {% if request.user.is_superuser %}
+  <form action="/invest/pitch" method="POST">
+    {% csrf_token %}
+    <input type="text" name="username" value="{{company.username}}" hidden />
+    <button type="submit" class='get-started' style='margin-top: 1rem ;margin-left: 0rem'>Consult</button>
+  </form>
+
+  {% endif %}
+
+</div>
+
+  <br> <br> <br> <br> <br> <br>
+</body>
+
+{% endblock content %}

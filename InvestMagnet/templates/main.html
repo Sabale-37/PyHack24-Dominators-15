@@ -1,21 +1,32 @@
 <!DOCTYPE html>
 <html>
   <head>
+    {% load static %}
     <link rel="shortcut icon" type="png" href="images/icon/favicon.png" />
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Comaptible" content="IE=edge" />
     <title>{% block title %}{% endblock title %}</title>
     <meta name="desciption" content="" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    {% load static %}
+
+    <!-- Bootstrap CSS -->
+<link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+<!-- Bootstrap JavaScript -->
+<script src="{% static 'bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+<!-- Bootstrap CSS CDN -->
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+<!-- Bootstrap JavaScript CDN -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+
     <link
       rel="stylesheet"
       type="text/css"
-      href="{%static 'Home/css/style.css'%}"
+      href="{%static 'style.css'%}"
     />
     <script
       type="text/javascript"
-      src="{%static 'Home/js/script.js'%}"
+      src="{%static 'script.js'%}"
     ></script>
     <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
     <script>
@@ -34,19 +45,16 @@
     <header id="header">
       <nav>
         <div class="logo">
-          <img src="{%static 'Home/images/collegelogo.jpg'%}" alt="logo" />
+          <img src="{%static 'collegelogo.jpg'%}" alt="logo" />
         </div>
         <ul>
-          <li><a class="active" href="/">Home</a></li>
-          <li><a href="/#portfolio_section">Portfolio</a></li>
-          <li><a href="/#team_section">Team</a></li>
-          {% comment %} <li><a href="{% url "chat_home" %}">Services</a></li> {% endcomment %}
-          <li><a href="/chat/messages">Contact</a></li>
-         
+          <li><a class="{% if request.path == '/' %}active{% endif %}" href="/">Home</a></li>
+          <li><a class="{% if request.path == '/invest/' %}active{% endif %}" href="{% url "company" %}">View</a></li>
+          <li><a class="{% if request.path == '/invest/add/' %}active{% endif %}" href="{% url "add" %}">Add Profile</a></li>
         </ul>
         <div class="srch">
           <input type="text" class="search" placeholder="Search here..." /><img
-            src="{%static 'Home/icon/search.png'%}"
+            src="{%static 'search.png'%}"
             alt="search"
             onclick="slide()"
           />
@@ -59,6 +67,7 @@
   {% else %}
    <a class="get-started" href="{% url "login" %}">Get Started</a>
         {% endif %}
-
+</nav>
+</header>
 
 {% block content %}{% endblock content %}

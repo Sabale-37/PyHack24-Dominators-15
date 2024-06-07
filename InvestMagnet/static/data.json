@@ -1,0 +1,40 @@
+{
+  "start_year": "2020",
+  "problem_statement": "your problem statement",
+  "solution": "solution for that problem statement",
+  "market_opportunity": "market oppurtunity for the company",
+  "team": 10,
+
+  "description": "A description of the company",
+  "revenue": "1000000",
+  "founder": "John Doe",
+  "investment_round": "Series A",
+  "yearwise_revenue": [
+    { "year": "2020", "revenue": "500000" },
+    { "year": "2021", "revenue": "50034" },
+    { "year": "2022", "revenue": "500000" },
+    { "year": "2023", "revenue": "40000" }
+  ],
+  "yearwise_growth": [
+    { "year": "2020", "growth": "20%" },
+    { "year": "2021", "growth": "5%" },
+    { "year": "2022", "growth": "2%" },
+    { "year": "2023", "growth": "4%" }
+  ],
+  "digital_marketing": [
+    {
+      "youtube": "10%",
+      "instagram": "20%",
+      "website": "35%",
+      "other_source": "30%",
+      "facebook": "5%"
+    }
+  ],
+  "financial_graph": [
+    { "year": "2020", "total_sales": "10000", "new_income": "5000" },
+    { "year": "2021", "total_sales": "20000", "new_income": "7000" },
+    { "year": "2022", "total_sales": "22000", "new_income": "4000" },
+    { "year": "2023", "total_sales": "9000", "new_income": "3000" }
+  ],
+  "company_name": "amazon"
+}

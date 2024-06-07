@@ -1,0 +1,56 @@
+{
+    "company_name": "5",
+    "start_year": "Dr.Shweta Tiwari",
+    "problem_statement": "MBBS",
+    "solution": "Psychiatrist",
+    "market_opportunity": "Belgaum",
+    "team": 5,
+  
+    "description": "8789643798",
+    "revenue": "100000",
+    "founder": "Shweta Tiwari",
+    "investment_round": " shwetatiwari@gmail.com",
+    "yearwise_revenue": [
+      { "year": "2015", "revenue": "100000" },
+      { "year": "2016", "revenue": "3900" },
+      { "year": "2017", "revenue": "20000" },
+      { "year": "2018", "revenue": "4300" },
+      { "year": "2019", "revenue": "43789" },
+      { "year": "2020", "revenue": "85389" },
+      { "year": "2021", "revenue": "392178" },
+      { "year": "2022", "revenue": "16489" },
+      { "year": "2023", "revenue": "550000" }
+    ],
+    "yearwise_growth": [
+      { "year": "2015", "growth": "3%" },
+      { "year": "2016", "growth": "6%" },
+      { "year": "2017", "growth": "11%" },
+      { "year": "2018", "growth": "19%" },
+      { "year": "2019", "growth": "27%" },
+      { "year": "2020", "growth": "63%" },
+      { "year": "2021", "growth": "30%" },
+      { "year": "2022", "growth": "28%" },
+      { "year": "2023", "growth": "78%" }
+    ],
+    "digital_marketing": [
+      {
+        "youtube": "7%",
+        "instagram": "60%",
+        "website": "10%",
+        "other_source": "3%",
+        "facebook": "20%"
+      }
+    ],
+    "financial_graph": [
+      { "year": "2015", "total_sales": "5177", "new_income": "2476" },
+      { "year": "2016", "total_sales": "842579", "new_income": "42747" },
+      { "year": "2017", "total_sales": "635456", "new_income": "7678" },
+      { "year": "2018", "total_sales": "7676487", "new_income": "154241" },
+      { "year": "2019", "total_sales": "54653", "new_income": "89878" },
+      { "year": "2020", "total_sales": "536746", "new_income": "5000" },
+      { "year": "2021", "total_sales": "20000", "new_income": "7000" },
+      { "year": "2022", "total_sales": "22000", "new_income": "4000" },
+      { "year": "2023", "total_sales": "9000", "new_income": "3000" }
+    ]
+  }
+  

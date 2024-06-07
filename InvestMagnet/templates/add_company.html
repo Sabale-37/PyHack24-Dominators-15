@@ -1,0 +1,55 @@
+{% extends "./main.html" %} {% block content %}
+
+<!DOCTYPE html>
+<html>
+  {% load static %}
+  <head>
+    <title>Add Your experties</title>
+  </head>
+  <body>
+    <h1>Add Your Profile</h1>
+    <div style="padding: 5rem">
+      <form method="post" enctype="multipart/form-data" style="grid">
+        {% csrf_token %}
+        <table class="table table-bordered">
+          <tbody>
+            <tr>
+              <th scope="row"><label for="image">Image:</label></th>
+              <td><input type="file" id="image" name="image" required /></td>
+            </tr>
+            <tr>
+              <th scope="row">
+                <label for="data_file" class="label">Data File (JSON):</label>
+              </th>
+              <td>
+                <input type="file" id="data_file" name="data_file" required />
+              </td>
+            </tr>
+
+            <tr>
+              <th scope="row">
+                <a
+                  href="{% static "data.json" %}"
+                  download='data.json'
+                >
+                  Download</a
+                >
+              </th>
+              <td>download the json file for reference</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <button
+          type="submit"
+          class="get-started"
+          style="margin-left: 0rem; margin-top: 1rem"
+        >
+          Add profile
+        </button>
+      </form>
+    </div>
+  </body>
+</html>
+
+{% endblock content %}
