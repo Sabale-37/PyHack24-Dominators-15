@@ -19,3 +19,22 @@ class LifestyleData(models.Model):
 
     def __str__(self):
         return f"LifestyleData({self.pk})"
+
+
+# models.py
+class Sentiment(models.Model):
+    positive = models.IntegerField(default=0)
+    neutral = models.IntegerField(default=0)
+    negative = models.IntegerField(default=0)
+
+    def update_sentiment(self, sentiment):
+        if sentiment == 0:
+            self.negative += 1
+        elif sentiment == 1:
+            self.neutral += 1
+        elif sentiment == 2:
+            self.positive += 1
+        self.save()
+    
+    def total(self):
+        return self.positive + self.neutral + self.negative

@@ -1,0 +1,109 @@
+{% extends "basic.html" %} {% block content %}
+<style>
+  .chat-box {
+    display: flex;
+    row-gap: 1rem;
+    padding: 10px;
+    width: 70%;
+    justify-content: center;
+    margin-bottom: 2rem;
+    margin: auto;
+    margin-top: 2rem;
+  }
+
+  .chat-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 0 1rem;
+  }
+
+  .chat-input:focus {
+    outline-color: #df2771;
+    outline-width: 1px;
+  }
+
+  .chat-send {
+    padding: 5px 10px;
+    background-color: #df2771;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  /* messages */
+
+  .messages {
+    padding: 2rem 10px 10px 3rem;
+
+    overflow-y: scroll;
+    width: 100%;
+    height: 80%;
+  }
+
+  .container{
+    margin: auto;
+    margin-top: 3rem;
+    width: 20rem;
+    height: 20rem;
+  }
+</style>
+<h1>Sentiment Prediction</h1>
+<form class="chat-box" method="post">
+  {% csrf_token %}
+  <input
+    type="text"
+    placeholder="Enter your message"
+    class="chat-input"
+    name="user_message"
+  />
+  <button class="chat-send" type="submit">Send</button>
+</form>
+
+
+
+<div class='container'>
+<canvas id="sentimentChart" width="400" height="400"></canvas>
+</div>
+    
+<script>
+    const sentimentData = {{ sentiment_data|safe }};
+    const total = sentimentData.negative + sentimentData.neutral + sentimentData.positive;
+
+    const data = {
+        labels: ['Negative', 'Neutral', 'Positive'],
+        datasets: [{
+            label: 'Sentiment Analysis',
+            data: [
+                (sentimentData.negative / total) * 100, 
+                (sentimentData.neutral / total) * 100, 
+                (sentimentData.positive / total) * 100
+            ],
+            backgroundColor: [
+            'rgba(255, 99, 132, 0.2)', // Red for Negative
+            'rgba(255, 205, 86, 0.2)', // Yellow for Neutral
+            'rgba(75, 192, 192, 0.2)' 
+            ],
+            borderColor: [
+            'rgba(255, 99, 132, 1)',   // Red for Negative
+            'rgba(255, 205, 86, 1)',   // Yellow for Neutral
+            'rgba(75, 192, 192, 1)'
+            ],
+            borderWidth: 1
+        }]
+    };
+
+    const config = {
+        type: 'pie',
+        data: data,
+    };
+
+    const sentimentChart = new Chart(
+        document.getElementById('sentimentChart'),
+        config
+    );
+</script>
+
+{% endblock content %}

@@ -1,6 +1,9 @@
 from django.shortcuts import render , redirect
 from django.http import HttpResponse
-from .student_mental_state import predict_lifestyle
+from django.views.decorators.csrf import csrf_exempt
+from .models import Sentiment
+from mentalHealth.student_mental_state import predict_lifestyle
+from .sentiment import predict_sentiment
 from .models import LifestyleData
 
 # Create your views here.
@@ -120,3 +123,32 @@ def dashboard(request):
 
 def calculateMental(request):
     return render(request, 'calculateMentalHealth.html')
+
+@csrf_exempt
+def sentiment(request):
+    sentiment_record, created = Sentiment.objects.get_or_create(id=1)
+    
+    if request.method == "POST":
+        user_message = request.POST.get('user_message')
+        sent = predict_sentiment(user_message)
+        
+        sentiment_record.update_sentiment(sent)
+        
+        sentiment_dict = {0: 'Negative', 1: 'Neutral', 2: 'Positive'}
+        
+        return render(request, 'sentiment.html', {
+            'message': sentiment_dict[sent],
+            'sentiment_data': {
+                'negative': sentiment_record.negative,
+                'neutral': sentiment_record.neutral,
+                'positive': sentiment_record.positive
+            }
+        })
+    
+    return render(request, 'sentiment.html', {
+        'sentiment_data': {
+            'negative': sentiment_record.negative,
+            'neutral': sentiment_record.neutral,
+            'positive': sentiment_record.positive
+        }
+    })
